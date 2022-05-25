@@ -1,0 +1,92 @@
+@media screen and (max-width: 500px) {
+    
+    .container {
+        background-color: $overlay;
+        padding: 0;
+        align-items: flex-end;
+
+        .component {
+            border-color: transparent;
+
+            .content {
+                
+                .header {
+                    margin-bottom: 40px;
+                }
+            }
+        }
+    }
+
+    .select-location {
+        padding-bottom: 5em !important;
+
+        .btn{
+            display: none;
+        }
+
+        .falsy{
+            display: flex !important;
+        }
+    }
+
+    .confirm-location {
+        height: fit-content !important;
+        min-height: fit-content !important;
+
+        .header {
+
+            .arrow {
+                visibility: hidden;
+            }
+
+            .close {
+                visibility: visible !important;
+                color: $button-bg;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        }
+
+        .location-details {
+            flex-direction: column;
+
+            .details {
+                width: 100%;
+                padding-right: 0;
+
+                .btn {
+                    margin-top: 20px;
+                }
+            }
+
+            a, .map , .search-input-button{
+                margin-left: 0;
+                display: none;
+            }
+        }
+    }
+
+    .add-location {
+        justify-content: flex-start !important;
+        height: 100% !important;
+
+        .details-info {
+            width: 100%;
+        }
+    }
+
+    .falsy , .falsyy{
+        display: block !important;
+    }
+
+    .bg-map {
+        opacity: 1 !important;
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        top:0;
+        z-index: -1;
+        display: block !important;
+        visibility: visible !important;
+    }
+}

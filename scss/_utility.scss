@@ -1,0 +1,110 @@
+// utility classes
+
+.container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+
+    .component {
+        height: 451px;
+        width: 832px;
+        min-height: 75%;
+        min-width: 65%;
+        border: solid 1.2px $border-color;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        background-color: $primary-bg;
+    }
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: capitalize;
+    margin-bottom: 60px;
+    
+    .title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+
+.btn, input, .search-input {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: solid $input-field-border;
+    border-radius: 5px;
+    height: 45px;
+    margin: 10px 0;
+}
+
+.btn {
+    background-color: $button-bg;
+    color: $button-text;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input {
+    font-family: 'Noto Sans', sans-serif, FontAwesome;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+.search-input {
+    justify-content: space-between;
+    margin: 0;
+    margin-bottom: 13px;
+    padding: 2px 0 2px 15px;
+
+    .search-input-item {
+        height: 100%;
+        flex-grow: 2;
+
+        input {
+            height: 100%;
+            margin: 0;
+            border: none;
+            text-align: left;
+        }
+    }
+
+    .search-input-button {
+        width: 75px;
+        height: 100%;
+        text-transform: uppercase;
+        text-align: left;
+        color: $input-field-border;
+        font-weight: 600;   
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primary-text;
+    font-weight: 500;
+    font-size: 0.9em;
+
+    .icon {
+        display: inline-block;
+    }
+}
+
+.map, .bg-map {
+    background: url("../img/if-map-fails.png") no-repeat center center/cover;
+}

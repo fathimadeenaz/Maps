@@ -1,0 +1,57 @@
+@media (max-width: 768px) and (min-width: 501px) {
+
+    .confirm-location {
+
+        .inner-container{
+
+            justify-content: space-between;
+
+            .header {
+                margin-bottom: 10px;
+
+                .title {
+                    font-size: 18px;
+                }
+            }
+
+            .location-details {
+                flex-direction: column;
+                justify-content: space-between;
+                
+                .details, .map {
+                    width: 100%;
+                }
+
+                .details {
+                    height: fit-content;
+                    padding-right: 0;
+
+                    .details-info {
+                        margin-bottom: 5px;
+
+                        .search-input {
+                            height: 40px;
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    .btn {
+                        display: none;
+                    }
+                }
+
+                .map {
+                    margin-left: 0;
+                    height: 220px;
+                }
+
+                .false {
+                    display: block !important;
+                    margin: 0;
+                    height: 40px;
+                    margin-top: 10px;
+                }
+            }
+        }   
+    }
+}
