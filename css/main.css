@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&display=swap");
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 5%; }
+  .container .component {
+    height: 451px;
+    width: 832px;
+    min-height: 75%;
+    min-width: 65%;
+    border: solid 1.2px #000;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #fff; }
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+  margin-bottom: 60px; }
+  .header .title {
+    font-size: 20px;
+    font-weight: 500; }
+
+.btn, input, .search-input {
+  width: 100% !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: solid #0d62cb;
+  border-radius: 5px;
+  height: 45px;
+  margin: 10px 0; }
+
+.btn {
+  background-color: #0d62cb;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer; }
+
+input {
+  font-family: 'Noto Sans', sans-serif, FontAwesome; }
+  input:focus {
+    outline: 0; }
+
+.search-input {
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 13px;
+  padding: 2px 0 2px 15px; }
+  .search-input .search-input-item {
+    height: 100%;
+    flex-grow: 2; }
+    .search-input .search-input-item input {
+      height: 100%;
+      margin: 0;
+      border: none;
+      text-align: left; }
+  .search-input .search-input-button {
+    width: 75px;
+    height: 100%;
+    text-transform: uppercase;
+    text-align: left;
+    color: #0d62cb;
+    font-weight: 600;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer; }
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 0.9em; }
+  a .icon {
+    display: inline-block; }
+
+.map, .bg-map {
+  background: url("../img/if-map-fails.png") no-repeat center center/cover; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-color: #fff;
+  font-family: "Noto Sans", sans-serif;
+  color: #000; }
+
+.content, .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+
+.arrow {
+  cursor: pointer; }
+
+.buttons .btn .icon {
+  margin-right: 0.3em; }
+
+.buttons #or {
+  font-size: 0.7em;
+  text-transform: uppercase;
+  color: #676767;
+  margin: 10px 0; }
+
+.info {
+  font-weight: 500;
+  width: calc(100% - 35px); }
+
+.inner-container {
+  height: 100%; }
+  .inner-container .location-details {
+    display: flex;
+    align-content: space-between;
+    text-align: left;
+    width: 100%;
+    height: 100%; }
+    .inner-container .location-details .details, .inner-container .location-details .map {
+      height: 100%; }
+    .inner-container .location-details .details {
+      width: 45%;
+      padding-right: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      .inner-container .location-details .details button {
+        margin-bottom: 0 !important; }
+    .inner-container .location-details .map {
+      width: 55%;
+      margin-left: 20px; }
+      .inner-container .location-details .map iframe {
+        height: 100%; }
+
+.close {
+  visibility: hidden; }
+
+.hidden {
+  display: none !important; }
+
+@media (max-width: 768px) and (min-width: 501px) {
+  .confirm-location .inner-container {
+    justify-content: space-between; }
+    .confirm-location .inner-container .header {
+      margin-bottom: 10px; }
+      .confirm-location .inner-container .header .title {
+        font-size: 18px; }
+    .confirm-location .inner-container .location-details {
+      flex-direction: column;
+      justify-content: space-between; }
+      .confirm-location .inner-container .location-details .details, .confirm-location .inner-container .location-details .map {
+        width: 100%; }
+      .confirm-location .inner-container .location-details .details {
+        height: fit-content;
+        padding-right: 0; }
+        .confirm-location .inner-container .location-details .details .details-info {
+          margin-bottom: 5px; }
+          .confirm-location .inner-container .location-details .details .details-info .search-input {
+            height: 40px;
+            margin-bottom: 5px; }
+        .confirm-location .inner-container .location-details .details .btn {
+          display: none; }
+      .confirm-location .inner-container .location-details .map {
+        margin-left: 0;
+        height: 220px; }
+      .confirm-location .inner-container .location-details .false {
+        display: block !important;
+        margin: 0;
+        height: 40px;
+        margin-top: 10px; } }
+
+@media screen and (max-width: 500px) {
+  .container {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0;
+    align-items: flex-end; }
+    .container .component {
+      border-color: transparent; }
+      .container .component .content .header {
+        margin-bottom: 40px; }
+  .select-location {
+    padding-bottom: 5em !important; }
+    .select-location .btn {
+      display: none; }
+    .select-location .falsy {
+      display: flex !important; }
+  .confirm-location {
+    height: fit-content !important;
+    min-height: fit-content !important; }
+    .confirm-location .header .arrow {
+      visibility: hidden; }
+    .confirm-location .header .close {
+      visibility: visible !important;
+      color: #0d62cb;
+      font-size: 20px;
+      cursor: pointer; }
+    .confirm-location .location-details {
+      flex-direction: column; }
+      .confirm-location .location-details .details {
+        width: 100%;
+        padding-right: 0; }
+        .confirm-location .location-details .details .btn {
+          margin-top: 20px; }
+      .confirm-location .location-details a, .confirm-location .location-details .map, .confirm-location .location-details .search-input-button {
+        margin-left: 0;
+        display: none; }
+  .add-location {
+    justify-content: flex-start !important;
+    height: 100% !important; }
+    .add-location .details-info {
+      width: 100%; }
+  .falsy, .falsyy {
+    display: block !important; }
+  .bg-map {
+    opacity: 1 !important;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    display: block !important;
+    visibility: visible !important; } }
