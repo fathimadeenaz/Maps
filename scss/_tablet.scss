@@ -1,57 +1,60 @@
 @media (max-width: 768px) and (min-width: 501px) {
+	.confirm-location {
+		.inner-container {
+			justify-content: space-between;
 
-    .confirm-location {
+			.header {
+				margin-bottom: 10px;
 
-        .inner-container{
+				.title {
+					font-size: 18px;
+				}
+			}
 
-            justify-content: space-between;
+			.location-details {
+				flex-direction: column;
+				justify-content: space-between;
 
-            .header {
-                margin-bottom: 10px;
+				.details,
+				.map {
+					width: 100%;
+				}
 
-                .title {
-                    font-size: 18px;
-                }
-            }
+				.details {
+					height: fit-content;
+					padding-right: 0;
 
-            .location-details {
-                flex-direction: column;
-                justify-content: space-between;
-                
-                .details, .map {
-                    width: 100%;
-                }
+					.details-info {
+						margin-bottom: 5px;
 
-                .details {
-                    height: fit-content;
-                    padding-right: 0;
+						.search-input,
+						.loc-info {
+							height: 40px;
+							margin-bottom: 5px;
+						}
 
-                    .details-info {
-                        margin-bottom: 5px;
+						.buttons-wrap {
+							margin-top: 10px;
+						}
+					}
 
-                        .search-input {
-                            height: 40px;
-                            margin-bottom: 5px;
-                        }
-                    }
+					.btn {
+						display: none;
+					}
+				}
 
-                    .btn {
-                        display: none;
-                    }
-                }
+				.map {
+					margin-left: 0;
+					height: 220px;
+				}
 
-                .map {
-                    margin-left: 0;
-                    height: 220px;
-                }
-
-                .false {
-                    display: block !important;
-                    margin: 0;
-                    height: 40px;
-                    margin-top: 10px;
-                }
-            }
-        }   
-    }
+				.false {
+					display: block !important;
+					margin: 0;
+					height: 40px;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
 }
