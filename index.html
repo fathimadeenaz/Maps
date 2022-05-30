@@ -1,102 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=myMap&libraries=places"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&callback=myMap&libraries=places"></script>
 
-    <script defer src="script.js"></script>
-    <title>Maps Mockup</title>
-</head>
-<body>
-    <div class="container">
+		<script defer src="script.js"></script>
+		<title>ERIP</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="component select-location">
+				<div class="content">
+					<div class="header">
+						<div class="arrow">
+							<i class="fa-solid fa-arrow-left"></i>
+						</div>
+						<div class="title">select location</div>
+						<div class="close">
+							<i class="fa-regular fa-circle-xmark"></i>
+						</div>
+					</div>
+					<div class="info">
+						Select your delivery location to get started
+					</div>
+				</div>
 
-        <div class="component select-location">
-            <div class="content">
-                <div class="header">
-                    <div class="arrow"><i class="fa-solid fa-arrow-left"></i></div>
-                    <div class="title">select location</div>
-                    <div class="close"><i class="fa-regular fa-circle-xmark"></i></div>
-                </div>
-                <div class="info">Select your delivery location to get started</div>
-            </div>
+				<div class="buttons">
+					<button class="btn" onclick="getLocation('.map')">
+						<div class="icon">
+							<i class="fa-solid fa-location-crosshairs"></i>
+						</div>
+						<div class="btn-info">Use my current location</div>
+					</button>
+					<button
+						class="btn falsy hidden"
+						onclick="getLocation('.bg-map')"
+					>
+						<div class="icon">
+							<i class="fa-solid fa-location-crosshairs"></i>
+						</div>
+						<div class="btn-info">Use my current location</div>
+					</button>
+					<div id="or">or</div>
+					<input
+						type="text"
+						placeholder="&#xF002;&nbsp;Search street, locality, etc"
+					/>
+				</div>
+			</div>
 
-            <div class="buttons">
-                <button class="btn" onclick="getLocation('.map')">
-                    <div class="icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-                    <div class="btn-info">Use my current location</div>
-                </button>
-                <button class="btn falsy hidden" onclick="getLocation('.bg-map')">
-                    <div class="icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-                    <div class="btn-info">Use my current location</div>
-                </button>
-                <div id="or">or</div>
-                <input type="text" placeholder="&#xF002;&nbsp;Search street, locality, etc">
-            </div>
-        </div>
+			<div class="component confirm-location hidden">
+				<div class="bg-map hidden"></div>
+				<div class="content inner-container">
+					<div class="header">
+						<div class="arrow">
+							<i class="fa-solid fa-arrow-left"></i>
+						</div>
+						<div class="title">confirm location</div>
+						<div class="close">
+							<i class="fa-regular fa-circle-xmark"></i>
+						</div>
+					</div>
 
-        <div class="component confirm-location hidden">
-            <div class="bg-map hidden"></div>
-            <div class="content inner-container">
-                <div class="header">
-                    <div class="arrow"><i class="fa-solid fa-arrow-left"></i></div>
-                    <div class="title">confirm location</div>
-                    <div class="close"><i class="fa-regular fa-circle-xmark"></i></div>
-                </div>
+					<div class="location-details">
+						<div class="details">
+							<div class="details-info">
+								<div class="search-input">
+									<div class="search-input-item">
+										<input
+											type="text"
+											value=""
+											placeholder="Address"
+										/>
+									</div>
+									<button class="search-input-button">
+										change
+									</button>
+									<button
+										class="search-input-button falsyy hidden"
+									>
+										change
+									</button>
+								</div>
 
-                <div class="location-details">
-                    <div class="details">
-                        <div class="details-info">
-                            <div class="search-input">
-                                <div class="search-input-item">
-                                    <input type="text"  value="" placeholder="Address">
-                                </div>
-                                <button class="search-input-button">change</button>
-                                <button class="search-input-button falsyy hidden">change</button>
-                            </div>
-                            <a href="#">
-                                <div class="icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-                                Use my current location
-                            </a>
-                        </div>
-                        <button class="btn">
-                            <div class="btn-info">Confirm and Proceed</div>
-                        </button>
-                    </div>
-                    <div class="map"></div>
-                    <button class="btn false hidden">
-                        <div class="btn-info">Confirm and Proceed</div>
-                    </button>
-                </div>
-            </div>
-        </div>
+								<input
+									class="loc-info"
+									type="text"
+									placeholder="Flat/Building/Street"
+								/>
 
-        <div class="component add-location hidden">
-            <div class="content">
-                <div class="header">
-                    <div class="arrow"><i class="fa-solid fa-arrow-left"></i></div>
-                    <div class="title">add location</div>
-                    <div class="close"><i class="fa-regular fa-circle-xmark"></i></div>
-                </div>
-            </div>
+								<div class="buttons-wrap">
+									<label for="home" class="radio-buttons">
+										<input
+											type="radio"
+											name="mode"
+											id="home"
+											checked
+										/>
+										<div>home</div>
+									</label>
+									<label for="office" class="radio-buttons">
+										<input
+											type="radio"
+											name="mode"
+											id="office"
+											checked
+										/>
+										<div>office</div>
+									</label>
+									<label for="other" class="radio-buttons">
+										<input
+											type="radio"
+											name="mode"
+											id="other"
+											checked
+										/>
+										<div>other</div>
+									</label>
+								</div>
 
-            <div class="details-info">
-                <div class="search-input">
-                    <div class="search-input-item">
-                        <input type="text"  value="" placeholder="Address">
-                    </div>
-                    <button class="search-input-button">change</button>
-                </div>
-                <a href="#">
-                    <div class="icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-                    Use my current location
-                </a>
-            </div>
-        </div>
+								<a href="#">
+									<div class="icon">
+										<i
+											class="fa-solid fa-location-crosshairs"
+										></i>
+									</div>
+									Use my current location
+								</a>
+							</div>
+							<button class="btn">
+								<div class="btn-info">Confirm and Proceed</div>
+							</button>
+						</div>
+						<div class="map"></div>
+						<button class="btn false hidden">
+							<div class="btn-info">Confirm and Proceed</div>
+						</button>
+					</div>
+				</div>
+			</div>
 
-    </div>
-</body>
+			<div class="component add-location hidden">
+				<div class="content">
+					<div class="header">
+						<div class="arrow">
+							<i class="fa-solid fa-arrow-left"></i>
+						</div>
+						<div class="title">add location</div>
+						<div class="close">
+							<i class="fa-regular fa-circle-xmark"></i>
+						</div>
+					</div>
+				</div>
+
+				<div class="details-info">
+					<div class="search-input">
+						<div class="search-input-item">
+							<input type="text" value="" placeholder="Address" />
+						</div>
+						<button class="search-input-button">change</button>
+					</div>
+					<a href="#">
+						<div class="icon">
+							<i class="fa-solid fa-location-crosshairs"></i>
+						</div>
+						Use my current location
+					</a>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
